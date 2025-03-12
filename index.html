@@ -69,6 +69,13 @@ section {
     text-align: justify;
     clear: both;
 }
+
+section-left {
+    margin: 32px 0px 32px 0px;
+    text-align: left;
+    clear: both;
+}
+
 .col-5 {
      width: 20%;
      float: left;
@@ -314,7 +321,7 @@ figure {
     vertical-align: middle;
 }
 
-pre {
+/*pre {
     font-size: 0.9em;
     padding-left: 7px;
     padding-right: 7px;
@@ -323,6 +330,18 @@ pre {
     border-radius: 3px;
     background-color: rgb(235, 235, 235);
     overflow-x: auto;
+}*/
+
+pre {
+    font-size: 0.9em;
+    padding-left: 25px;
+    padding-right: 7px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+    text-align: left;
 }
 
 .download-thumb {
@@ -492,7 +511,7 @@ pre {
                 <span class="material-icons"> description </span>
                  Paper
             </a>
-            <a class="paper-btn" href="https://github.com/UMass-Foundation-Model/Co-LLM-Agents/">
+            <a class="paper-btn" href="https://github.com/UMass-Embodied-AGI/Co-LLM-Agents/">
                 <span class="material-icons"> code </span>
                 Code
             </a>
@@ -556,7 +575,7 @@ pre {
       <div class="flex-item">
         <figure>
           <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
-            <source src="video/video 2 resized6_22.mp4" type="video/mp4">
+            <source src="video/CWAH_video.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </figure>
@@ -594,56 +613,6 @@ pre {
 
     <section id="results">
         <hr>
-        <!-- <h2>Experiments Setup</h2>  
-        <div class="flex-row">
-            <p>Communicative Watch-And-Help (C-WAH) is an embodied multi-agent cooperation benchmark, extended from the existing Watch-And-Help Challenge, where we focus more on cooperation ability. To achieve this, we support communication between agents and remove the Watch stage so both agents have common goals. The challenge is built on a realistic multi-agent simulation platform, VirtualHome-Social. We conduct experiments under both symbolic observations and ego-centric visual observations. The task is defined as five types of common household activities: <em>Prepare afternoon tea, Wash dishes, Prepare a meal, Put groceries</em>, and <em>Set up a dinner table</em>, and represented as various predicates with counts to be satisfied. The number of total goal objects is within 3 to 5.
-            </p>
-            <p>We extend the ThreeDWorld Transport Challenge into a multi-agent setting with more types of objects and containers, more realistic object placements, and support communication between agents, named ThreeDWorld Multi-Agent Transport (TDW-MAT), built on top of the TDW platform, which is a general-purpose virtual world simulation platform. 
-                 In the new challenge, we use the latest <em>replicant</em> humanoid provided by the TDW platform as an embodiment. 
-                The agents are tasked to transport as many target objects as possible to the goal position with the help of containers as tools, without which the agent can transport only two objects at a time. The agents have the same ego-centric visual observation and action space as before with a new communication action added.
-                
-            </p>
-
-        </div>  -->
-        <!-- <h2>Video Demo</h2>
-        <div class="flex-container">
-          <div class="flex-item">
-            <figure>
-              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
-                <source src="video/TDW_Video_1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-          </div>
-          <div class="flex-item">
-            <figure>
-              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
-                <source src="video/TDW_Video_2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-          </div>
-          <div class="flex-item">
-            <figure>
-              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
-                <source src="video/TDW_Video_3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-          </div>
-          <div class="flex-item">
-            <figure>
-              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
-                <source src="video/video 2 resized6_22.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </figure>
-          </div>
-        </div>
-        
-        <hr>
-        <hr>
-    -->
 
         <h2>Examples</h2>  
             <div class="flex-row">
@@ -666,6 +635,18 @@ pre {
         <hr>
 
     </section> 
+
+    <section class="section-left" id="BibTeX">
+      <div class="container is-max-desktop content column is-full-width">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{zhang2023building,
+title={Building cooperative embodied agents modularly with large language models},
+author={Zhang, Hongxin and Du, Weihua and Shan, Jiaming and Zhou, Qinhong and Du, Yilun and Tenenbaum, Joshua B and Shu, Tianmin and Gan, Chuang},
+journal={arXiv preprint arXiv:2307.02485},
+year={2023}
+}</code></pre>
+      </div>
+    </section>
 
 </div>
 </body>
