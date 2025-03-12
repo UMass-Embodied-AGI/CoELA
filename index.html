@@ -1,0 +1,672 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<script src="bootstrap.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<!---
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+--->
+<script src="load-mathjax.js" async></script>
+
+
+<style type="text/css">
+body {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 980px){
+    body {
+        width: 980px;
+    }
+}
+
+
+h1 {
+    font-weight:300;
+    line-height: 1.15em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+a:link,a:visited {
+    color: #5364cc;
+    text-decoration: none;
+}
+a:hover {
+    color: #208799;
+}
+h1 {
+    text-align: center;
+}
+h2,h3 {
+    text-align: left;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+h2 {
+    font-weight: 400;
+    margin: 16px 0px 4px 0px;
+}
+h3 {
+    font-weight: 600;
+    margin: 16px 0px 4px 0px;
+}
+
+.paper-title {
+    padding: 1px 0px 1px 0px;
+}
+section {
+    margin: 32px 0px 32px 0px;
+    text-align: justify;
+    clear: both;
+}
+.col-5 {
+     width: 20%;
+     float: left;
+}
+
+.move-down {
+    margin-top:1.2cm;
+}
+
+.col-4 {
+     width: 25%;
+     float: left;
+}
+.col-3 {
+     width: 33%;
+     float: left;
+}
+.col-2 {
+     width: 50%;
+     float: left;
+}
+.col-1 {
+     width: 100%;
+     float: left;
+}
+
+.author-row, .affil-row {
+    font-size: 26px;
+}
+
+.author-row-new { 
+    text-align: center; 
+}
+
+.author-row-new a {
+    display: inline-block;
+    font-size: 16px;
+    padding: 4px;
+}
+
+.author-row-new sup {
+    color: #313436;
+    font-size: 12px;
+}
+
+.affiliations-new {
+    font-size: 18px;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.row {
+    margin: 16px 0px 16px 0px;
+}
+.authors {
+    font-size: 26px;
+}
+.affiliatons {
+    font-size: 18px;
+}
+.affil-row {
+    margin-top: 18px;
+}
+.teaser {
+    max-width: 100%;
+}
+.text-center {
+    text-align: center;  
+}
+.screenshot {
+    width: 256px;
+    border: 1px solid #ddd;
+}
+.screenshot-el {
+    margin-bottom: 16px;
+}
+hr {
+    height: 1px;
+    border: 0; 
+    border-top: 1px solid #ddd;
+    margin: 0;
+}
+.material-icons {
+    vertical-align: -6px;
+}
+p {
+    line-height: 1.25em;
+}
+.caption {
+    font-size: 16px;
+    color: #666;
+    margin-top: 4px;
+    margin-bottom: 10px;
+	text-align: left;
+}
+
+
+video {
+    display: block;
+    margin: auto;
+}
+
+
+figure {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#bibtex pre {
+    font-size: 14px;
+    background-color: #eee;
+    padding: 16px;
+}
+.blue {
+    color: #2c82c9;
+    font-weight: bold;
+}
+.orange {
+    color: #d35400;
+    font-weight: bold;
+}
+.flex-row {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 0 0 50%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.paper-btn-coming-soon {
+    position: relative; 
+    top: 0;
+    left: 0;
+}
+
+.coming-soon {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+}
+
+.center {
+  margin-left: 10.0%;
+  margin-right: 10.0%;
+}
+
+.paper-btn {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 100px;
+  font-weight: 600;
+}
+
+.paper-btn-tapestry {
+  position: relative;
+  text-align: center;
+
+  display: inline-block;
+  margin: 8px;
+  padding: 8px 8px;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  
+  background-color: #5364cc;
+  color: white !important;
+  font-size: 20px;
+  width: 200px;
+  font-weight: 600;
+}
+
+.paper-btn-parent {
+    display: flex;
+    justify-content: center;
+    margin: 16px 0px;
+}
+
+.paper-btn:hover {
+    opacity: 0.85;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.venue {
+    font-size: 23px;
+}
+
+.topnav {
+    background-color: #EEEEEE;
+    overflow: hidden;
+}
+
+.topnav div {
+    max-width: 1070px;
+    margin: 0 auto;
+}
+
+.topnav a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.topnav img {
+    padding: 2px 0px;
+    width: 100%;
+    margin: 0.2em 0px 0.3em 0px;
+    vertical-align: middle;
+}
+
+pre {
+    font-size: 0.9em;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 3px;
+    background-color: rgb(235, 235, 235);
+    overflow-x: auto;
+}
+
+.download-thumb {
+    display: flex;
+}
+
+@media only screen and (max-width: 620px) {
+    .download-thumb {
+        display: none;
+    }
+}
+
+.paper-stuff {
+    width: 50%;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 620px) {
+    .paper-stuff {
+        width: 100%;
+    }
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  text-align: center;
+  float: left;
+  width: 16.666%;
+  padding: 5px;
+}
+.column3 {
+  text-align: center;
+  float: left;
+  width: 33.333%;
+  padding: 5px;
+}
+.column4 {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.column5 {
+  text-align: center;
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+.column10 {
+  text-align: center;
+  float: left;
+  width: 10%;
+  padding: 5px;
+}
+.border-right {
+    border-right: 1px solid black;
+}
+.border-bottom{
+    border-bottom: 1px solid black;
+}
+
+
+.row-center {
+    margin: 16px 0px 16px 0px;
+    text-align: center;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+.figure-img {
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+
+
+
+
+
+
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+
+
+
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .column {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .column3 {
+    width: 100%;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="bootstrap-grid.css">
+
+<script type="text/javascript" src="../js/hidebib.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+    <head>
+        <title> Building Cooperative Embodied Agents Modularly with Large Language Models</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:description" content="Building Cooperative Embodied Agents Modularly with Large Language Models"/>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+        <meta name="twitter:title" content="Building Cooperative Embodied Agents Modularly with Large Language Models">
+        <meta name="twitter:description" content="">
+        <meta name="twitter:image" content="">
+    </head>
+
+ <body>
+
+<div class="container">
+    <div class="paper-title">
+    <h1> 
+        Building Cooperative Embodied Agents Modularly with Large Language Models
+    </div>
+
+    <div id="authors">
+        <center>
+            <div class="author-row-new">
+                <a href="https://icefoxzhx.github.io/">Hongxin Zhang<sup>1*</sup></a>,
+                <a href="https://stiglidu.github.io/">Weihua Du<sup>2*</sup></a>,
+                <a href="https://github.com/shanjiaming">Jiaming Shan<sup>3</sup></a>,
+                <a href="https://zhouqqhh.github.io/">Qinhong Zhou<sup>1</sup></a>,
+                <a href="https://yilundu.github.io/">Yilun Du<sup>4</sup></a>,
+                <a href="https://www.csail.mit.edu/person/joshua-tenenbaum">Joshua B. Tenenbaum<sup>4</sup></a>,
+                <a href="https://www.tshu.io/">Tianmin Shu<sup>4</sup></a>,
+                <a href="https://people.csail.mit.edu/ganchuang/">Chuang Gan<sup>1,5</sup></a>
+            </div>
+        </center>
+        <center>
+        <div class="affiliations">
+            <span><sup>1</sup> University of Massachusetts Amherst</span>
+            <span><sup>2</sup> Tsinghua University</span>
+            <span><sup>3</sup> Shanghai Jiao Tong University</span>
+            <span><sup>4</sup> MIT</span>
+            <span><sup>5</sup> MIT-IBM Watson AI Lab</span><br/>
+        </div>
+
+        <div class="affil-row">
+            <div class="venue text-center"><b>ICLR 2024 </b></div>
+        </div>
+
+        </center>
+
+        <div style="clear: both">
+            <div class="paper-btn-parent">
+            <a class="paper-btn" href="https://arxiv.org/abs/2307.02485">
+                <span class="material-icons"> description </span>
+                 Paper
+            </a>
+            <a class="paper-btn" href="https://github.com/UMass-Foundation-Model/Co-LLM-Agents/">
+                <span class="material-icons"> code </span>
+                Code
+            </a>
+            </div>
+        </div>
+
+    <section id="teaser-image">
+        <center>
+            <figure>
+                <a>
+                    <img width="80%" src="figure/teaser_v1.7.jpg"> 
+                </a>
+            </figure>
+        </center>
+    </section>
+
+    
+    <section id="abstract"/>
+        <hr>
+        <h2>Abstract</h2>
+        <div class="flex-row">
+            <p>
+                In this work, we address challenging multi-agent cooperation problems with decentralized control, raw sensory observations, costly communication, and multi-objective tasks instantiated in various embodied environments. While previous research either presupposes a cost-free communication channel or relies on a centralized controller with shared observations, we harness the commonsense knowledge, reasoning ability, language comprehension, and text generation prowess of LLMs and seamlessly incorporate them into a cognitive-inspired modular framework that integrates with perception, memory, and execution. Thus building a <b>Co</b>operative <b>E</b>mbodied <b>L</b>anguage <b>A</b>gent <em>CoELA</em>, who can plan, communicate, and cooperate with others to accomplish long-horizon tasks efficiently. Our experiments on C-WAH and TDW-MAT demonstrate that <em>CoELA</em> driven by GPT-4 can surpass strong planning-based methods and exhibit emergent effective communication. Though current Open LMs like LLAMA-2 still underperform, we fine-tune a <em>CoELA</em> with data collected with our agents and show how they can achieve promising performance. We also conducted a user study for human-agent interaction and discovered that <em>CoELA</em> communicating in natural language can earn more trust and cooperate more effectively with humans. Our research underscores the potential of LLMs for future research in multi-agent cooperation.
+	    </p>
+        </div>
+    </section>    
+    
+    <section id="Demo"/>
+    <hr>
+    <h2>Demo</h2>
+    <div class="flex-row">
+        <p>
+    Here are several videos demonstrating our cooperative embodied agents built with Large Langauge Models who can think and communicate, on the ThreeDWorld Multi-Agent Transport and the Communicative Watch-And-Help environments.
+    </p>
+    </div>
+    <div class="flex-container">
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/TDW_Video_1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/TDW_Video_2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/TDW_Video_3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+      <div class="flex-item">
+        <figure>
+          <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+            <source src="video/video 2 resized6_22.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </div>
+    </div>
+    </section>
+       
+    <section id="Method"/>
+        <hr>
+        <h2>Method</h2>
+
+
+        <div class="flex-row">
+            <p> 
+                Inspired by the cognitive architectures, we build <em>CoELA</em>, a Cooperative Embodied Language Agent with novel modular framework integrating the strong reasoning ability and language generation capability of LLMs. As shown in the following figure,  <em>CoELA</em> consists of five key modules: (a) Perception, (b) Memory, (c) Communication, (d) Planning, and (e) Execution. <br> <br>
+
+                At each interaction step, <em>CoELA</em> first uses (a) Perception Module to perceive the raw sensory observation received from the environment, then updates the (b) Memory Module with extracted new information, which stores its knowledge and experience of the world and others. <br> <br>
+
+                <em>CoELA</em> tackles the challenge of efficient communication with a two-step method: first decide on <em>what</em> to send, then decide <em>whether</em> to send this message or choose another plan by deliberately using (c) The <em>Communication Module</em> to retrieve related information from (b) and utilize an LLM to generate the best message to send "in mind" beforehand, then leverages (d) the <em>Planning Module</em> driven by LLM with strong reasoning ability to make the decision on which plan to take given the related information retrieved from (b) and available actions proposed regarding the current state. The generated plan is then used to update (b2) the Episodic Memory.<br> <br>
+
+                Finally, (e) the <em>Execution Module</em> retrieves procedural knowledge stored in (b3) to turn the high-level plan into primitive actions executable in the environment.
+            </p>
+        </div>
+
+        <figure>
+            <a>
+                <img width="100%" src="figure/framework_v7.png"> 
+            </a>
+            <p class="caption">
+                An overview of <em>CoELA</em>. There are five key modules in our framework: (c) The Communication Module and (d) the Planning Module leverage LLMs to generate messages and make plans, (b) The Memory Module stores the agent's knowledge and experience about the world and others in semantic, episodic and procedural memory respectively,  (a) The Perception Module and (e) the Execution Module interact directly with the external environment by perceiving raw observations and generating primitive actions.
+            </p> <br>
+        </figure>
+        </center>
+    </section>
+
+    <section id="results">
+        <hr>
+        <!-- <h2>Experiments Setup</h2>  
+        <div class="flex-row">
+            <p>Communicative Watch-And-Help (C-WAH) is an embodied multi-agent cooperation benchmark, extended from the existing Watch-And-Help Challenge, where we focus more on cooperation ability. To achieve this, we support communication between agents and remove the Watch stage so both agents have common goals. The challenge is built on a realistic multi-agent simulation platform, VirtualHome-Social. We conduct experiments under both symbolic observations and ego-centric visual observations. The task is defined as five types of common household activities: <em>Prepare afternoon tea, Wash dishes, Prepare a meal, Put groceries</em>, and <em>Set up a dinner table</em>, and represented as various predicates with counts to be satisfied. The number of total goal objects is within 3 to 5.
+            </p>
+            <p>We extend the ThreeDWorld Transport Challenge into a multi-agent setting with more types of objects and containers, more realistic object placements, and support communication between agents, named ThreeDWorld Multi-Agent Transport (TDW-MAT), built on top of the TDW platform, which is a general-purpose virtual world simulation platform. 
+                 In the new challenge, we use the latest <em>replicant</em> humanoid provided by the TDW platform as an embodiment. 
+                The agents are tasked to transport as many target objects as possible to the goal position with the help of containers as tools, without which the agent can transport only two objects at a time. The agents have the same ego-centric visual observation and action space as before with a new communication action added.
+                
+            </p>
+
+        </div>  -->
+        <!-- <h2>Video Demo</h2>
+        <div class="flex-container">
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/TDW_Video_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/TDW_Video_2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/TDW_Video_3.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+          <div class="flex-item">
+            <figure>
+              <video class="centered" width="100%" autoplay loop muted playsinline class="video-background">
+                <source src="video/video 2 resized6_22.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </figure>
+          </div>
+        </div>
+        
+        <hr>
+        <hr>
+    -->
+
+        <h2>Examples</h2>  
+            <div class="flex-row">
+                <p>To better understand the essential factors for effective cooperation, we conduct
+                    a qualitative analysis of the agents’ behaviors exhibited in our experiments and identified several cooperative behaviors.
+				</p>
+            </div> 
+            <center>
+
+            <figure>
+                <a>
+                    <img width="100%" src="figure/case.png"> 
+                </a>
+                <p class="caption">
+                    Example cooperative behaviors demonstrate <bm>CoELA</bm> can communicate effectively and are good cooperators.
+                </p> <br>
+            </figure>
+            </center>
+
+        <hr>
+
+    </section> 
+
+</div>
+</body>
+</html>
