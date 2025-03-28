@@ -508,10 +508,12 @@ class lm_agent:
                 self.object_map[np.where(self.id_map == self.last_action['object'])] = 0
                 self.id_map[np.where(self.id_map == self.last_action['object'])] = 0
         if len(self.dropping_object) > 0 and self.obs['status'] == 1:
-            self.logger.info("successful drop!")
+            self.logger.info(f"Drop object: {self.dropping_object}")
             self.satisfied += self.dropping_object
             self.dropping_object = []
-            self.plan = None
+            if len(self.holding_objects_id) == 0:
+                self.logger.info("successful drop!")
+                self.plan = None
 
         ignore_obstacles = []
         ignore_ids = []
